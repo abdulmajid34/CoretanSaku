@@ -1,0 +1,58 @@
+name: coretan_saku
+description: "A nostalgic expense tracker app with hand-drawn aesthetic."
+publish_to: "none"
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Dependencies Utama
+  cupertino_icons: ^1.0.6
+  google_fonts: ^6.1.0 # Untuk font Patrick Hand
+  intl: ^0.19.0 # Untuk format mata uang (Rupiah) & Tanggal
+  flutter_svg: ^2.0.9 # Untuk icon vector (nanti)
+
+  # State Management & Architecture (Persiapan Fase Berikutnya)
+  # Kita siapkan saja agar nanti tinggal pakai
+  provider: ^6.1.1 # Simple state management untuk awal
+  uuid: ^4.3.3 # Untuk generate unique ID tiap sheet/transaksi
+  shared_preferences: ^2.5.4
+  image_picker: ^1.2.1
+  google_generative_ai: ^0.4.7
+  flutter_dotenv: ^6.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+  # --- Tools ---
+  flutter_launcher_icons: ^0.13.1
+
+# Konfigurasi Aset
+flutter:
+  uses-material-design: true
+
+  # 1. Registrasi Folder Aset
+  assets:
+    - assets/textures/
+    - assets/icons/
+    - assets/images/
+    - .env
+
+  # 2. (Opsional) Jika kamu download font manual, daftarkan disini.
+  # Tapi karena kita pakai package google_fonts, bagian fonts ini bisa di-skip.
+
+  # Konfigurasi Icon Aplikasi (Launcher Icon)
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/CoretanSakuApp.png" # Pastikan file gambarnya ada disini
+  min_sdk_android: 21
+  adaptive_icon_background: "#FDF6E3" # Warna kertas (biar background icon menyatu)
+  adaptive_icon_foreground: "assets/images/CoretanSakuApp.png"
